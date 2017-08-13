@@ -1,0 +1,9 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: gateway-zuul
+eureka:
+  client:
+    service-url:
+       defaultZone : http://root:root@discovery2:8762/eureka/,http://root:root@discovery:8761/eureka/
