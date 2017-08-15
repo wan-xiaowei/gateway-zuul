@@ -7,3 +7,12 @@ eureka:
   client:
     service-url:
        defaultZone : http://root:root@discovery2:8762/eureka/,http://root:root@discovery:8761/eureka/
+logging:
+  level:
+     com.netflix : debug
+zuul:
+  ignored-services: '*'
+  routes:
+    cia-j : /cia/**
+  sensitive-headers: Cookie,Set-Cookie,Authorization   #默认敏感信息    访问http://localhost:8040/cia/cia-j/vat-tax/loadVatTaxInfo/1
+                                                         #禁用过滤器  zuul.<simpleclassname>.<filtetype>.disabled=true
